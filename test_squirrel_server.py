@@ -17,7 +17,7 @@ def describe_squirrel_server():
     @pytest.fixture(autouse=True)
     def setup_and_cleanup_database():
         # setup the database
-        shutil.copyfile('squirrel_db.db.template', 'squirrel_db.db')
+        shutil.copyfile('empty_squirrel_db.db', 'squirrel_db.db')
         yield
         # clean up the database
         os.remove('squirrel_db.db')
