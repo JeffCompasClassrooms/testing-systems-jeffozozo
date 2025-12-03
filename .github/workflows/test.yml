@@ -1,0 +1,17 @@
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  RunSystemTests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: install pytest
+        run: pip install pytest pytest-spec pytest-describe
+
+      - name: run test
+        run: pytest --spec
